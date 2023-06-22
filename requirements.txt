@@ -3,3 +3,5 @@ gunicorn
 sqlalchemy
 psycopg2
 load_dotenv
+flask_wtf
+wtforms
