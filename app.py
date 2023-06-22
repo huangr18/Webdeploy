@@ -1,10 +1,10 @@
 from flask import Flask, render_template, jsonify, request
 from database import load_video_from_db, load_user_from_db
 from upload_video import UploadFileForm
+from cv import isThereFile
 import os
 
 app = Flask(__name__)
-
 
 
 
@@ -28,10 +28,13 @@ def show_user(id):
 @app.route("/user/<id>/upload", methods=['GET', 'POST'])
 def user_upload(id):
     data = request.form
+    videoPath = os.path.join(os.path.abspath(os.path.dirname(data.file)))
+    # isThereFile(data)
     # form = UploadFileForm()
     # if form.validate_on_submit():
-    #     file = form.file.data
-    return 'file has been uploaded', data
+    print(videoPath)
+    return render_template('video.html', video=data, videoPath=videoPath)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
