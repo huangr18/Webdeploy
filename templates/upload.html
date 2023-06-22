@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ user.name }}Upload</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(100, 100, 100);
+            text-align: center;
+        }
 
+        h2 {
+            font-size: 32px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(50, 50, 50);
+            text-align: center;
+        }
+
+    </style>
     {% include 'bootstrap.html' %}
 
 </head>
 <body>
     {% include 'nav.html' %}
-
+<div style="font-size: 40px; margin-left: 30px;">
     <h3>Id</h3>
     <p> {{ user.id }}</p>
     <h3>Name</h3>
     <p> {{ user.name }}</p>
     <h3>Age</h3>
     <p> {{ user.age }}</p>
+</div>
+
+{% include 'application_form.html' %}
+
 </body>
 </html>

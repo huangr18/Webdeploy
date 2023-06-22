@@ -1,5 +1,7 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from database import load_video_from_db, load_user_from_db
+from upload_video import UploadFileForm
+import os
 
 app = Flask(__name__)
 
@@ -22,6 +24,14 @@ def show_user(id):
     if not user:
         return "Not found", 404
     return render_template('upload.html', user=user)
+
+@app.route("/user/<id>/upload", methods=['GET', 'POST'])
+def user_upload(id):
+    data = request.form
+    # form = UploadFileForm()
+    # if form.validate_on_submit():
+    #     file = form.file.data
+    return 'file has been uploaded', data
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
