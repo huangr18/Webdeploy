@@ -1,12 +1,13 @@
 
 <div class="border-bottom row" style="margin-bottom: 16px;">
     <div class="col-9">
-        <h4 style="margin-bottom: 4px;">{{job['title']}}</h4>
-        <div><b>Location: </b>{{job['location']}}</div>
+        <h4 style="margin-bottom: 4px;">{{job['id']}}</h4>
         <div><b>Name: </b>{{job['name']}}</div>
+        <div><b>Age: </b>{{job['age']}}</div>
     </div>
 
     <div class="col-3">
-        <button type="button" class="btn btn-outline-info">Apply</button>
+        <a href="/user/{{job['id']}}" class="btn btn-primary" role="button" data-bs-toggle="button">info</a>
+
     </div>
 </div>
