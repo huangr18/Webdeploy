@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+          crossorigin="anonymous">
+    <title>Home</title>
+
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(100, 100, 100);
+            text-align: center;
+        }
+
+        #banner {
+            width:100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(50, 50, 50);
+            text-align: center;
+        }
+
+        #container {
+            max-width: 720px;
+            margin: 0 auto 0 auto;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+
+    <h1>Hello, This is {{company_name}}'s Home Page</h1>
+    <img class="img-fluid" id="banner" src = "static/banner.jpeg" height="320">
+    <p> Fusce congue ultricies urna non pretium. Pellentesque bibendum cursus ante id egestas. 
+        Praesent condimentum commodo tincidunt. Vestibulum urna erat, sollicitudin nec metus in, 
+        elementum sollicitudin erat. Cras rutrum laoreet aliquet. Nullam commodo fringilla dignissim. 
+        Sed bibendum odio nunc. Integer bibendum ligula eget convallis sollicitudin. Vestibulum euismod neque non 
+        fermentum placerat. Proin ac luctus metus. Mauris ullamcorper finibus lobortis. Integer scelerisque libero 
+        eu rutrum finibus.
+    </p>
+    <h2>Positions</h2>
+    <p>
+        {% for job in jobs %}
+            {% include 'jobitem.html' %}
+        {% endfor %}
+    </p>
+    <br>
+    <p>Need help?</p>
+    <button class="btn btn-primary">Help</button>
+</div>
+</body>
+</html>
