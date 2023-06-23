@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Video submitted</title>
+    {% include 'bootstrap.html' %}
 </head>
 <body>
-    {{videoPath}}
-    <embed type="video/webm" src="{{data}}" width="400" height="300">
+    <div class="container">
+        <h4>First Name</h4>
+        <div>{{ application['firstname'] }}</div><br>
+
+        <h4>Username</h4>
+        <div>{{ application['username'] }}</div><br>
+
+        <h4>Password</h4>
+        <div>{{ application['password'] }}</div><br>
+
+        <h4>Email</h4>
+        <div>{{ application['email'] }}</div><br>
+
+        <h4>Video</h4>
+        <div>
+        <video width="320" height="240" controls>
+            <source src="{{ application['video'] }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div><br>
+    </div>
 </body>
 </html>

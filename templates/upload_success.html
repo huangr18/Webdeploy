@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <title>Upload Success!</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(100, 100, 100);
+            text-align: center;
+        }
+
+        #banner {
+            width:100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(50, 50, 50);
+            text-align: center;
+        }
+
+        form {
+            max-width: 720px;
+            margin: 0 auto 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src = "static/banner.jpeg" height="320">
+    <h4>Upload Here</h4>
+    <form action="/user/{{user['user_id']}}/apply" method="post">
+        <div class="mb-2">
+        <label>First Name</label><br>
+        <input type="text" name="firstname" placeholder="Jim">
+    </div>
+    <div class="mb-2">
+        <label>User Name</label><br>
+        <input type="text" name="username" placeholder="JimH01">
+    </div>
+    <div class="mb-2">
+        <label>Password</label><br>
+        <input type="text" name="password" placeholder="abc123">
+    </div>
+    <div class="mb-2">
+        <label>email</label><br>
+        <input type="text" name="email" placeholder="Jimh@gmail.com">
+    </div>
+    <br>
+    <div class="mb-2">
+        <label for="formFile" class="form-label">Video file only</label><br>
+        <input class="form-control" type="file" name="video">
+      </div>
+      <br>
+    <input type="submit">
+    </form>
+</body>
+</html>
